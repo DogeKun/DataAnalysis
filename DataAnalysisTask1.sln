@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2019
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAnalysisTask1", "DataAnalysisTask1\DataAnalysisTask1.csproj", "{60DFADCA-B842-4DAB-9B46-2964CEC7929A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{60DFADCA-B842-4DAB-9B46-2964CEC7929A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60DFADCA-B842-4DAB-9B46-2964CEC7929A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60DFADCA-B842-4DAB-9B46-2964CEC7929A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60DFADCA-B842-4DAB-9B46-2964CEC7929A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {18E5A7A3-8A24-4226-91A9-04928A012F06}
+	EndGlobalSection
+EndGlobal
