@@ -23,8 +23,6 @@ namespace DataAnalysisTask1
             dbPhone = new Database();
             dbPhone.ReadDatabase();
 
-            this.WindowState = FormWindowState.Maximized;
-
             DataTable_Fill();
             ComboBox_Fill();
         }
@@ -33,47 +31,39 @@ namespace DataAnalysisTask1
         {
             
             DataTable dTable = new DataTable();
+            
+            PhoneDataGrid.CellClick += PhoneDataGrid_CellClick;
             PhoneDataGrid.DataSource = dTable;
-            dTable.Columns.AddRange(new DataColumn[14]
+            dTable.Columns.AddRange(new DataColumn[8]
             {
                 new DataColumn("ID", typeof(int)),
-                new DataColumn("Pavadinimas"),
+                new DataColumn("Name"),
                 new DataColumn("Kaina", typeof(float)),
-                new DataColumn("Cpu pavadinimas"),
-                new DataColumn("Cores", typeof(int)),
-                new DataColumn("Gpu"),
-                new DataColumn("Battery capacity"),
-                new DataColumn("Camera MPX", typeof(int)),
-                new DataColumn("Memory Capacity", typeof(int)),
-                new DataColumn("ScreenName"),
-                new DataColumn("ScreenIstrizaine", typeof(float)),
+                new DataColumn("CPU"),
+                new DataColumn("Battery capacity", typeof(int)),
+                new DataColumn("Size", typeof(float)),
                 new DataColumn("Resoliution"),
-                new DataColumn("StorageAmount", typeof(int)),
                 new DataColumn("Analitic Length", typeof(float))
             });
 
             foreach(Phone phone in dbPhone.phones)
             {
                 dTable.Rows.Add(
-                    phone.phoneID, phone.phoneName, phone.phonePrice,
-                    phone.cpu.cpuName, phone.cpu.cpuCore, phone.cpu.gpuName,
-                    phone.battery.batteryCapacity, phone.camera.cameraMPX, phone.memory.memoryAmount,
-                    phone.screen.screenName, phone.screen.Istrizaine(),
-                    phone.resoliution.ResoliutionToString(), phone.storage.storageCapacity, phone.AnalysisLength
+                    phone.phoneID, phone.phoneName, phone.phonePrice, phone.cpu.cpuName,  
+                    phone.battery.batteryCapacity, (float)Math.Round(phone.screen.Istrizaine(), 2), phone.resoliution.ResoliutionToString(), phone.AnalysisLength
                     );
             }
-            PhoneDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            PhoneDataGrid.AllowUserToResizeRows = true;
-            PhoneDataGrid.AllowUserToResizeColumns = true;
+            PhoneDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            PhoneDataGrid.AllowUserToResizeRows = false;
+            PhoneDataGrid.AllowUserToResizeColumns = false;
             PhoneDataGrid.AllowUserToAddRows = false;
 
             PhoneDataGrid.Font = new Font("Microsoft sans serif", 10);
             PhoneDataGrid.DataSource = dTable;
         }
 
-        private void ComboBox_Fill()
+        private void ComboBox_Clear()
         {
-            //Clearing Comboboxes if for some reason we will need to update information
             BatteryComboBox.Items.Clear();
             CPUCoreComboBox.Items.Clear();
             CameraComboBox.Items.Clear();
@@ -81,6 +71,12 @@ namespace DataAnalysisTask1
             ResoliutionComboBox.Items.Clear();
             StorageComboBox.Items.Clear();
             ScreenSizeComboBox.Items.Clear();
+        }
+
+        private void ComboBox_Fill()
+        {
+            //Clearing Comboboxes if for some reason we will need to update information
+            ComboBox_Clear();
 
             BatteryComboBox.Items.Add("Select Item");
             BatteryComboBox.SelectedIndex = 0;
@@ -221,7 +217,16 @@ namespace DataAnalysisTask1
             //if for some reason the statment doesnt work it will give user a message box 
             MessageBox.Show("Select atleast 1 attribute");
             return;
+        }
 
+        /**
+         * On click i get the current row Cell and looking at Column ID
+         */
+        public void PhoneDataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+            DataGridViewRow DataRow = PhoneDataGrid.CurrentRow;
+            Console.WriteLine(DataRow.Cells["ID"].Value);
         }
     }
 }
