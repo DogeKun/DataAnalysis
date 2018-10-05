@@ -10,7 +10,7 @@ namespace DataAnalysisTask1.Algorithms
     {
         static string GetColumnName(int index)
         {
-            const string letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            const string letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZs";
 
             var value = "";
 
