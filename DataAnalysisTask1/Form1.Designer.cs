@@ -68,7 +68,7 @@
             this.tableLayoutPanel1.Controls.Add(this.panel2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.PhoneDataGrid, 0, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(-3, -3);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
@@ -94,7 +94,7 @@
             this.panel2.Controls.Add(this.BatteryLabel);
             this.panel2.Controls.Add(this.BatteryComboBox);
             this.panel2.Location = new System.Drawing.Point(864, 4);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.tableLayoutPanel1.SetRowSpan(this.panel2, 2);
             this.panel2.Size = new System.Drawing.Size(363, 678);
@@ -103,8 +103,8 @@
             // AnalysisLength
             // 
             this.AnalysisLength.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AnalysisLength.Location = new System.Drawing.Point(214, 641);
-            this.AnalysisLength.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AnalysisLength.Location = new System.Drawing.Point(181, 606);
+            this.AnalysisLength.Margin = new System.Windows.Forms.Padding(4);
             this.AnalysisLength.Name = "AnalysisLength";
             this.AnalysisLength.Size = new System.Drawing.Size(127, 28);
             this.AnalysisLength.TabIndex = 14;
@@ -117,7 +117,7 @@
             this.CPUCoreComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CPUCoreComboBox.FormattingEnabled = true;
             this.CPUCoreComboBox.Location = new System.Drawing.Point(181, 47);
-            this.CPUCoreComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CPUCoreComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.CPUCoreComboBox.Name = "CPUCoreComboBox";
             this.CPUCoreComboBox.Size = new System.Drawing.Size(160, 28);
             this.CPUCoreComboBox.TabIndex = 13;
@@ -127,7 +127,7 @@
             this.CameraComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CameraComboBox.FormattingEnabled = true;
             this.CameraComboBox.Location = new System.Drawing.Point(181, 84);
-            this.CameraComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CameraComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.CameraComboBox.Name = "CameraComboBox";
             this.CameraComboBox.Size = new System.Drawing.Size(160, 28);
             this.CameraComboBox.TabIndex = 12;
@@ -137,7 +137,7 @@
             this.MemoryComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MemoryComboBox.FormattingEnabled = true;
             this.MemoryComboBox.Location = new System.Drawing.Point(181, 121);
-            this.MemoryComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MemoryComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.MemoryComboBox.Name = "MemoryComboBox";
             this.MemoryComboBox.Size = new System.Drawing.Size(160, 28);
             this.MemoryComboBox.TabIndex = 11;
@@ -147,7 +147,7 @@
             this.ResoliutionComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ResoliutionComboBox.FormattingEnabled = true;
             this.ResoliutionComboBox.Location = new System.Drawing.Point(181, 158);
-            this.ResoliutionComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ResoliutionComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.ResoliutionComboBox.Name = "ResoliutionComboBox";
             this.ResoliutionComboBox.Size = new System.Drawing.Size(160, 28);
             this.ResoliutionComboBox.TabIndex = 10;
@@ -157,7 +157,7 @@
             this.StorageComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StorageComboBox.FormattingEnabled = true;
             this.StorageComboBox.Location = new System.Drawing.Point(181, 194);
-            this.StorageComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.StorageComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.StorageComboBox.Name = "StorageComboBox";
             this.StorageComboBox.Size = new System.Drawing.Size(160, 28);
             this.StorageComboBox.TabIndex = 9;
@@ -167,7 +167,7 @@
             this.ScreenSizeComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ScreenSizeComboBox.FormattingEnabled = true;
             this.ScreenSizeComboBox.Location = new System.Drawing.Point(181, 231);
-            this.ScreenSizeComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ScreenSizeComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.ScreenSizeComboBox.Name = "ScreenSizeComboBox";
             this.ScreenSizeComboBox.Size = new System.Drawing.Size(160, 28);
             this.ScreenSizeComboBox.TabIndex = 8;
@@ -254,7 +254,7 @@
             this.BatteryComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BatteryComboBox.FormattingEnabled = true;
             this.BatteryComboBox.Location = new System.Drawing.Point(181, 10);
-            this.BatteryComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BatteryComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.BatteryComboBox.Name = "BatteryComboBox";
             this.BatteryComboBox.Size = new System.Drawing.Size(160, 28);
             this.BatteryComboBox.TabIndex = 0;
@@ -268,7 +268,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PhoneDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.PhoneDataGrid.Location = new System.Drawing.Point(4, 4);
-            this.PhoneDataGrid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PhoneDataGrid.Margin = new System.Windows.Forms.Padding(4);
             this.PhoneDataGrid.Name = "PhoneDataGrid";
             this.PhoneDataGrid.ReadOnly = true;
             this.PhoneDataGrid.Size = new System.Drawing.Size(852, 506);
@@ -312,7 +312,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1232, 691);
+            this.tabPage3.Size = new System.Drawing.Size(1232, 679);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "NaN";
             this.tabPage3.UseVisualStyleBackColor = true;
