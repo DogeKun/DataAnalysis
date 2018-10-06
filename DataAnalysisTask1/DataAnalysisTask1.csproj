@@ -78,7 +78,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Algorithms\Apriori.cs" />
+    <Compile Include="Algorithms\AssociationRule.cs" />
+    <Compile Include="Algorithms\Bit.cs" />
     <Compile Include="Algorithms\DataAnalysis.cs" />
+    <Compile Include="Algorithms\ItemSet.cs" />
+    <Compile Include="Algorithms\ItemSetCollection.cs" />
+    <Compile Include="Algorithms\Subsets.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="data\ComboBoxItem.cs" />
     <Compile Include="data\Phone.cs" />

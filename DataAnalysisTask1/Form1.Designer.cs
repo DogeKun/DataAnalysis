@@ -93,8 +93,8 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.BatteryLabel);
             this.panel2.Controls.Add(this.BatteryComboBox);
-            this.panel2.Location = new System.Drawing.Point(864, 4);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Location = new System.Drawing.Point(806, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
             this.tableLayoutPanel1.SetRowSpan(this.panel2, 2);
             this.panel2.Size = new System.Drawing.Size(363, 678);
@@ -103,8 +103,8 @@
             // AnalysisLength
             // 
             this.AnalysisLength.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AnalysisLength.Location = new System.Drawing.Point(181, 606);
-            this.AnalysisLength.Margin = new System.Windows.Forms.Padding(4);
+            this.AnalysisLength.Location = new System.Drawing.Point(158, 608);
+            this.AnalysisLength.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AnalysisLength.Name = "AnalysisLength";
             this.AnalysisLength.Size = new System.Drawing.Size(127, 28);
             this.AnalysisLength.TabIndex = 14;
@@ -309,13 +309,13 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1232, 679);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "NaN";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(192, 71);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
