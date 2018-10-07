@@ -30,7 +30,7 @@ namespace DataAnalysisTask1.data
         }
         public override string ToString()
         {
-            return cpuCore.ToString();
+            return cpuCore.ToString() + " cores";
         }
     }
 }

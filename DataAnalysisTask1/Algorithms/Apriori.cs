@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DataAnalysisTask1.data;
 
 namespace DataAnalysisTask1
 {
     class Apriori
     {
-        public static ItemSetCollection DoApriori(ItemSetCollection db, double supportThreshold)
+        public ItemSetCollection DoApriori(ItemSetCollection db, double supportThreshold)
         {
             ItemSet I = db.GetUniqueItems();
             ItemSetCollection L = new ItemSetCollection(); //resultant large itemset
@@ -46,7 +47,7 @@ namespace DataAnalysisTask1
             return (L);
         }
 
-        public static List<AssociationRule> Mine(ItemSetCollection db, ItemSetCollection L, double confidenceThreshold)
+        public List<AssociationRule> Mine(ItemSetCollection db, ItemSetCollection L, double confidenceThreshold)
         {
             List<AssociationRule> allRules = new List<AssociationRule>();
 

@@ -43,6 +43,14 @@ namespace DataAnalysisTask1
             return (support);
         }
 
+        public int FindAmount(ItemSet itemset)
+        {
+            int matchCount = (from i in this
+                where i.Contains(itemset)
+                select i).Count();
+            return matchCount;
+        }
+
         public override string ToString()
         {
             return (string.Join("\r\n", (from itemset in this select itemset.ToString()).ToArray()));

@@ -30,6 +30,11 @@ namespace DataAnalysisTask1
             return (removed);
         }
 
+        public string Test()
+        {
+            return ("(" + string.Join(",", this.ToArray()) + "}");
+        }
+
         public override string ToString()
         {
             return ("(" + string.Join(",", this.ToArray()) + "}" +

@@ -96,6 +96,7 @@
     <Compile Include="data\PhoneResoliution.cs" />
     <Compile Include="data\PhoneScreen.cs" />
     <Compile Include="data\PhoneStorage.cs" />
+    <Compile Include="FileIO.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
