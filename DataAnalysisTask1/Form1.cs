@@ -318,7 +318,7 @@ namespace DataAnalysisTask1
             AprioriCollection.Items.Clear();
             if (itemsets != null)
             {
-                ItemSetCollection L = new Apriori().DoApriori(itemsets, 10.0);
+                ItemSetCollection L = new Apriori().DoApriori(itemsets, 1.0);
 
                 foreach (var output in L)
                 {
