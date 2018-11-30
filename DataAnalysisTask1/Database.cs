@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Deployment.Application;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -76,34 +75,158 @@ namespace DataAnalysisTask1
                 switch(selection)
                 {
                     case Tables.Phone:
-                        GetPhones();
+                        dbConn.Open();
+                        query = "SELECT * FROM `phones` WHERE 1";
+
+                        cmd = new MySqlCommand(query, dbConn);
+                        dataReader = cmd.ExecuteReader();
+                        while(dataReader.Read())
+                        {
+                            try
+                            {
+                                var phone = new Phone(
+                                    dataReader.GetInt16("phonesID"), dataReader.GetString("name"), dataReader.GetFloat("priceEur"),
+                                    cpus.Find(r => r.cpuID == dataReader.GetInt16("cpuID")),
+                                    batteries.Find(r => r.batteryID == dataReader.GetInt16("batteryID")),
+                                    biometrics.Find(r => r.biometricsID == dataReader.GetInt16("biometricID")),
+                                    cameras.Find(r => r.cameraID == dataReader.GetInt16("cameraID")),
+                                    manifactiorers.Find(r => r.manifactiorerID == dataReader.GetInt16("gamintojasID")),
+                                    memory.Find(r => r.memoryID == dataReader.GetInt16("memoryID")), dataReader.GetInt16("osID"), dataReader.GetInt16("portsID"),
+                                    screens.Find(r => r.screenID == dataReader.GetInt16("screenID")),
+                                    resoliutions.Find(r => r.resoliutionID == dataReader.GetInt16("skirgebaID")),
+                                    storages.Find(r => r.storageID == dataReader.GetInt16("storageID"))
+                                    );
+                                phones.Add(phone);
+                            }
+                            catch
+                            {
+                                Console.WriteLine("Failed to read row - " + dataReader.GetInt16("phonesID") + " Phones table");
+                            }
+                        }
+                        dbConn.Close();
                         break;
                     case Tables.PhoneBattery:
-                        GetBatteries();
+                        dbConn.Open();
+                        query = "SELECT * FROM `battery` WHERE 1";
+
+                        cmd = new MySqlCommand(query, dbConn);
+                        dataReader = cmd.ExecuteReader();
+                        while (dataReader.Read())
+                        {
+                            var phoneBattery = new PhoneBattery(dataReader.GetInt16("batteryID"), dataReader.GetInt16("amount"));
+                            batteries.Add(phoneBattery);
+                        }
+                        dbConn.Close();
                         break;
                     case Tables.PhoneBiometrics:
-                        GetBiometrics();
+                        dbConn.Open();
+                        query = "SELECT * FROM `biometrics` WHERE 1";
+
+                        cmd = new MySqlCommand(query, dbConn);
+                        dataReader = cmd.ExecuteReader();
+                        while (dataReader.Read())
+                        {
+                            
+                            var phoneBiometrics = new PhoneBiometrics(dataReader.GetInt16("biometricID"), dataReader.GetBoolean("bool"));
+                            biometrics.Add(phoneBiometrics);
+                        }
+                        dbConn.Close();
                         break;
                     case Tables.PhoneCamera:
-                        GetCamera();
+                        dbConn.Open();
+                        query = "SELECT * FROM `camera` WHERE 1";
+
+                        cmd = new MySqlCommand(query, dbConn);
+                        dataReader = cmd.ExecuteReader();
+                        while(dataReader.Read())
+                        {
+                            var phonecamera = new PhoneCamera(dataReader.GetInt16("cameraID"), dataReader.GetString("optics"),
+                                dataReader.GetInt16("mpx"), dataReader.GetInt16("recordQuality"));
+                            cameras.Add(phonecamera);
+                        }
+                        dbConn.Close();
                         break;
                     case Tables.PhoneCPU:
-                        GetCpu();
+                        dbConn.Open();
+                        query = "SELECT * FROM `cpu` WHERE 1";
+
+                        cmd = new MySqlCommand(query, dbConn);
+                        dataReader = cmd.ExecuteReader();
+                        while (dataReader.Read())
+                        {
+                            var phonecpu = new PhoneCPU(dataReader.GetInt16("cpuid"), 
+                                dataReader.GetString("name"), dataReader.GetInt16("cores"), 
+                                dataReader.GetFloat("frequency"), dataReader.GetString("GPU"));
+                            cpus.Add(phonecpu);
+                        }
+                        dbConn.Close();
                         break;
                     case Tables.PhoneManifactiorer:
-                        GetManifactiorer();
+                        dbConn.Open();
+                        query = "SELECT * FROM `gamintojas` WHERE 1";
+
+                        cmd = new MySqlCommand(query, dbConn);
+                        dataReader = cmd.ExecuteReader();
+                        while (dataReader.Read())
+                        {
+                            var phoneManifactiorer = new PhoneManifactiorer(dataReader.GetInt16("gamintojasID"), dataReader.GetString("name"));
+                            manifactiorers.Add(phoneManifactiorer);
+                        }
+                        dbConn.Close();
                         break;
                     case Tables.PhoneMemory:
-                        GetMemory();
+                        dbConn.Open();
+                        query = "SELECT * FROM `memory` WHERE 1";
+
+                        cmd = new MySqlCommand(query, dbConn);
+                        dataReader = cmd.ExecuteReader();
+                        while (dataReader.Read())
+                        {
+                            var phoneMemory = new PhoneMemory(dataReader.GetInt16("memoryID"), dataReader.GetInt16("amount"));
+                            memory.Add(phoneMemory);
+                        }
+                        dbConn.Close();
                         break;
                     case Tables.PhoneResoliution:
-                        GetResoliution();
+                        dbConn.Open();
+                        query = "SELECT * FROM `skirgeba` WHERE 1";
+
+                        cmd = new MySqlCommand(query, dbConn);
+                        dataReader = cmd.ExecuteReader();
+                        while (dataReader.Read())
+                        {
+                            var phoneResoliution = new PhoneResoliution(dataReader.GetInt16("skirGebaID"), dataReader.GetInt16("xaxis"), dataReader.GetInt16("yaxis"));
+                            resoliutions.Add(phoneResoliution);
+                        }
+                        dbConn.Close();
                         break;
                     case Tables.PhoneStorage:
-                        GetStorage();
+                        dbConn.Open();
+                        query = "SELECT * FROM `storage` WHERE 1";
+
+                        cmd = new MySqlCommand(query, dbConn);
+                        dataReader = cmd.ExecuteReader();
+                        while (dataReader.Read())
+                        {
+                            var phoneStorage = new PhoneStorage(dataReader.GetInt16("storageID"), dataReader.GetInt16("amount"));
+                            storages.Add(phoneStorage);
+                        }
+                        dbConn.Close();
                         break;
                     case Tables.PhoneScreen:
-                        GetScreen();
+                        dbConn.Open();
+                        query = "SELECT * FROM `screen` WHERE 1";
+
+                        cmd = new MySqlCommand(query, dbConn);
+                        dataReader = cmd.ExecuteReader();
+                        while (dataReader.Read())
+                        {
+                            var phoneScreen = new PhoneScreen(dataReader.GetInt16("screenID"),
+                                dataReader.GetString("name"), dataReader.GetInt16("screenLength"), 
+                                dataReader.GetInt16("screenWidth"), dataReader.GetBoolean("notch"));
+                            screens.Add(phoneScreen);
+                        }
+                        dbConn.Close();
                         break;
                 }
             }
@@ -114,179 +237,7 @@ namespace DataAnalysisTask1
             }
         }
 
-        private void GetPhones()
-        {
-            dbConn.Open();
-            query = "SELECT * FROM `phones` WHERE 1";
-
-            cmd = new MySqlCommand(query, dbConn);
-            dataReader = cmd.ExecuteReader();
-            while (dataReader.Read())
-            {
-                try
-                {
-                    var phone = new Phone(
-                        dataReader.GetInt16("phonesID"), dataReader.GetString("name"), dataReader.GetFloat("priceEur"),
-                        cpus.Find(r => r.cpuID == dataReader.GetInt16("cpuID")),
-                        batteries.Find(r => r.batteryID == dataReader.GetInt16("batteryID")),
-                        biometrics.Find(r => r.biometricsID == dataReader.GetInt16("biometricID")),
-                        cameras.Find(r => r.cameraID == dataReader.GetInt16("cameraID")),
-                        manifactiorers.Find(r => r.manifactiorerID == dataReader.GetInt16("gamintojasID")),
-                        memory.Find(r => r.memoryID == dataReader.GetInt16("memoryID")), dataReader.GetInt16("osID"), dataReader.GetInt16("portsID"),
-                        screens.Find(r => r.screenID == dataReader.GetInt16("screenID")),
-                        resoliutions.Find(r => r.resoliutionID == dataReader.GetInt16("skirgebaID")),
-                        storages.Find(r => r.storageID == dataReader.GetInt16("storageID"))
-                    );
-                    phones.Add(phone);
-                }
-                catch
-                {
-                    Console.WriteLine("Failed to read row - " + dataReader.GetInt16("phonesID") + " Phones table");
-                }
-            }
-            dbConn.Close();
-        }
-
-        private void GetBatteries()
-        {
-            dbConn.Open();
-            query = "SELECT * FROM `battery` WHERE 1";
-
-            cmd = new MySqlCommand(query, dbConn);
-            dataReader = cmd.ExecuteReader();
-            while (dataReader.Read())
-            {
-                var phoneBattery = new PhoneBattery(dataReader.GetInt16("batteryID"), dataReader.GetInt16("amount"));
-                batteries.Add(phoneBattery);
-            }
-            dbConn.Close();
-        }
-
-        private void GetBiometrics()
-        {
-            dbConn.Open();
-            query = "SELECT * FROM `biometrics` WHERE 1";
-
-            cmd = new MySqlCommand(query, dbConn);
-            dataReader = cmd.ExecuteReader();
-            while (dataReader.Read())
-            {
-
-                var phoneBiometrics = new PhoneBiometrics(dataReader.GetInt16("biometricID"), dataReader.GetBoolean("bool"));
-                biometrics.Add(phoneBiometrics);
-            }
-            dbConn.Close();
-        }
-
-        private void GetCamera()
-        {
-            dbConn.Open();
-            query = "SELECT * FROM `camera` WHERE 1";
-
-            cmd = new MySqlCommand(query, dbConn);
-            dataReader = cmd.ExecuteReader();
-            while (dataReader.Read())
-            {
-                var phonecamera = new PhoneCamera(dataReader.GetInt16("cameraID"), dataReader.GetString("optics"),
-                    dataReader.GetInt16("mpx"), dataReader.GetInt16("recordQuality"));
-                cameras.Add(phonecamera);
-            }
-            dbConn.Close();
-        }
-
-        private void GetCpu()
-        {
-            dbConn.Open();
-            query = "SELECT * FROM `cpu` WHERE 1";
-
-            cmd = new MySqlCommand(query, dbConn);
-            dataReader = cmd.ExecuteReader();
-            while (dataReader.Read())
-            {
-                var phonecpu = new PhoneCPU(dataReader.GetInt16("cpuid"),
-                    dataReader.GetString("name"), dataReader.GetInt16("cores"),
-                    dataReader.GetFloat("frequency"), dataReader.GetString("GPU"));
-                cpus.Add(phonecpu);
-            }
-            dbConn.Close();
-        }
-
-        private void GetManifactiorer()
-        {
-            dbConn.Open();
-            query = "SELECT * FROM `gamintojas` WHERE 1";
-
-            cmd = new MySqlCommand(query, dbConn);
-            dataReader = cmd.ExecuteReader();
-            while (dataReader.Read())
-            {
-                var phoneManifactiorer = new PhoneManifactiorer(dataReader.GetInt16("gamintojasID"), dataReader.GetString("name"));
-                manifactiorers.Add(phoneManifactiorer);
-            }
-            dbConn.Close();
-        }
-
-        private void GetMemory()
-        {
-            dbConn.Open();
-            query = "SELECT * FROM `memory` WHERE 1";
-
-            cmd = new MySqlCommand(query, dbConn);
-            dataReader = cmd.ExecuteReader();
-            while (dataReader.Read())
-            {
-                var phoneMemory = new PhoneMemory(dataReader.GetInt16("memoryID"), dataReader.GetInt16("amount"));
-                memory.Add(phoneMemory);
-            }
-            dbConn.Close();
-        }
-
-        private void GetResoliution()
-        {
-            dbConn.Open();
-            query = "SELECT * FROM `skirgeba` WHERE 1";
-
-            cmd = new MySqlCommand(query, dbConn);
-            dataReader = cmd.ExecuteReader();
-            while (dataReader.Read())
-            {
-                var phoneResoliution = new PhoneResoliution(dataReader.GetInt16("skirGebaID"), dataReader.GetInt16("xaxis"), dataReader.GetInt16("yaxis"));
-                resoliutions.Add(phoneResoliution);
-            }
-            dbConn.Close();
-        }
-
-        private void GetStorage()
-        {
-            dbConn.Open();
-            query = "SELECT * FROM `storage` WHERE 1";
-
-            cmd = new MySqlCommand(query, dbConn);
-            dataReader = cmd.ExecuteReader();
-            while (dataReader.Read())
-            {
-                var phoneStorage = new PhoneStorage(dataReader.GetInt16("storageID"), dataReader.GetInt16("amount"));
-                storages.Add(phoneStorage);
-            }
-            dbConn.Close();
-        }
-
-        private void GetScreen()
-        {
-            dbConn.Open();
-            query = "SELECT * FROM `screen` WHERE 1";
-
-            cmd = new MySqlCommand(query, dbConn);
-            dataReader = cmd.ExecuteReader();
-            while (dataReader.Read())
-            {
-                var phoneScreen = new PhoneScreen(dataReader.GetInt16("screenID"),
-                    dataReader.GetString("name"), dataReader.GetInt16("screenLength"),
-                    dataReader.GetInt16("screenWidth"), dataReader.GetBoolean("notch"));
-                screens.Add(phoneScreen);
-            }
-            dbConn.Close();
-        }
+       
     }
 }
 /*

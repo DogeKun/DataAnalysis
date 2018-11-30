@@ -78,12 +78,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Algorithms\Apriori.cs" />
-    <Compile Include="Algorithms\AssociationRule.cs" />
-    <Compile Include="Algorithms\Bit.cs" />
     <Compile Include="Algorithms\DataAnalysis.cs" />
-    <Compile Include="Algorithms\ItemSet.cs" />
-    <Compile Include="Algorithms\ItemSetCollection.cs" />
-    <Compile Include="Algorithms\Subsets.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="data\ComboBoxItem.cs" />
     <Compile Include="data\Phone.cs" />
@@ -96,7 +91,6 @@
     <Compile Include="data\PhoneResoliution.cs" />
     <Compile Include="data\PhoneScreen.cs" />
     <Compile Include="data\PhoneStorage.cs" />
-    <Compile Include="FileIO.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
