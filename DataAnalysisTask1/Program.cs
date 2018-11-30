@@ -14,8 +14,6 @@ namespace DataAnalysisTask1
         [STAThread]
         static void Main()
         {
-            Database db = new Database();
-            db.ReadDatabase();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());

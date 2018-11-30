@@ -46,14 +46,22 @@
             this.BatteryLabel = new System.Windows.Forms.Label();
             this.BatteryComboBox = new System.Windows.Forms.ComboBox();
             this.PhoneDataGrid = new System.Windows.Forms.DataGridView();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.TabControl = new System.Windows.Forms.TabControl();
+            this.PhonePage = new System.Windows.Forms.TabPage();
+            this.AprioriPage = new System.Windows.Forms.TabPage();
+            this.AprioriMine = new System.Windows.Forms.ListBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.AprioriBrowse = new System.Windows.Forms.Button();
+            this.AprioriData = new System.Windows.Forms.ListBox();
+            this.AprioriCollection = new System.Windows.Forms.ListBox();
+            this.AprioriDataMining = new System.Windows.Forms.Button();
+            this.AprioriCalculation = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PhoneDataGrid)).BeginInit();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.TabControl.SuspendLayout();
+            this.PhonePage.SuspendLayout();
+            this.AprioriPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -62,8 +70,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 69.92481F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.07519F));
             this.tableLayoutPanel1.Controls.Add(this.panel2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.PhoneDataGrid, 0, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(-3, -3);
@@ -72,7 +80,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1235, 701);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1231, 686);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel2
@@ -92,17 +100,17 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.BatteryLabel);
             this.panel2.Controls.Add(this.BatteryComboBox);
-            this.panel2.Location = new System.Drawing.Point(806, 4);
+            this.panel2.Location = new System.Drawing.Point(864, 4);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.tableLayoutPanel1.SetRowSpan(this.panel2, 2);
-            this.panel2.Size = new System.Drawing.Size(425, 689);
+            this.panel2.Size = new System.Drawing.Size(363, 678);
             this.panel2.TabIndex = 0;
             // 
             // AnalysisLength
             // 
             this.AnalysisLength.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AnalysisLength.Location = new System.Drawing.Point(122, 437);
+            this.AnalysisLength.Location = new System.Drawing.Point(181, 606);
             this.AnalysisLength.Margin = new System.Windows.Forms.Padding(4);
             this.AnalysisLength.Name = "AnalysisLength";
             this.AnalysisLength.Size = new System.Drawing.Size(127, 28);
@@ -260,6 +268,8 @@
             // 
             // PhoneDataGrid
             // 
+            this.PhoneDataGrid.AllowUserToAddRows = false;
+            this.PhoneDataGrid.AllowUserToDeleteRows = false;
             this.PhoneDataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -267,46 +277,124 @@
             this.PhoneDataGrid.Location = new System.Drawing.Point(4, 4);
             this.PhoneDataGrid.Margin = new System.Windows.Forms.Padding(4);
             this.PhoneDataGrid.Name = "PhoneDataGrid";
-            this.PhoneDataGrid.Size = new System.Drawing.Size(794, 517);
+            this.PhoneDataGrid.ReadOnly = true;
+            this.PhoneDataGrid.Size = new System.Drawing.Size(852, 506);
             this.PhoneDataGrid.TabIndex = 1;
             // 
-            // tabControl1
+            // TabControl
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(0, -1);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1240, 723);
-            this.tabControl1.TabIndex = 1;
+            this.TabControl.Controls.Add(this.PhonePage);
+            this.TabControl.Controls.Add(this.AprioriPage);
+            this.TabControl.Controls.Add(this.tabPage3);
+            this.TabControl.Location = new System.Drawing.Point(0, 12);
+            this.TabControl.Name = "TabControl";
+            this.TabControl.SelectedIndex = 0;
+            this.TabControl.Size = new System.Drawing.Size(1240, 708);
+            this.TabControl.TabIndex = 1;
             // 
-            // tabPage1
+            // PhonePage
             // 
-            this.tabPage1.Controls.Add(this.tableLayoutPanel1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(1232, 694);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.PhonePage.Controls.Add(this.tableLayoutPanel1);
+            this.PhonePage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.PhonePage.Location = new System.Drawing.Point(4, 25);
+            this.PhonePage.Name = "PhonePage";
+            this.PhonePage.Size = new System.Drawing.Size(1232, 679);
+            this.PhonePage.TabIndex = 0;
+            this.PhonePage.Text = "Phone selection";
+            this.PhonePage.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // AprioriPage
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1232, 694);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.AprioriPage.BackColor = System.Drawing.Color.DarkGray;
+            this.AprioriPage.Controls.Add(this.AprioriCalculation);
+            this.AprioriPage.Controls.Add(this.AprioriDataMining);
+            this.AprioriPage.Controls.Add(this.AprioriCollection);
+            this.AprioriPage.Controls.Add(this.AprioriData);
+            this.AprioriPage.Controls.Add(this.AprioriBrowse);
+            this.AprioriPage.Controls.Add(this.AprioriMine);
+            this.AprioriPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.AprioriPage.Location = new System.Drawing.Point(4, 25);
+            this.AprioriPage.Name = "AprioriPage";
+            this.AprioriPage.Padding = new System.Windows.Forms.Padding(3);
+            this.AprioriPage.Size = new System.Drawing.Size(1232, 679);
+            this.AprioriPage.TabIndex = 1;
+            this.AprioriPage.Text = "Apriori";
+            // 
+            // AprioriMine
+            // 
+            this.AprioriMine.FormattingEnabled = true;
+            this.AprioriMine.ItemHeight = 25;
+            this.AprioriMine.Location = new System.Drawing.Point(335, 7);
+            this.AprioriMine.Name = "AprioriMine";
+            this.AprioriMine.Size = new System.Drawing.Size(889, 254);
+            this.AprioriMine.TabIndex = 0;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(1232, 679);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "NaN";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // AprioriBrowse
+            // 
+            this.AprioriBrowse.Location = new System.Drawing.Point(8, 7);
+            this.AprioriBrowse.Name = "AprioriBrowse";
+            this.AprioriBrowse.Size = new System.Drawing.Size(153, 39);
+            this.AprioriBrowse.TabIndex = 1;
+            this.AprioriBrowse.Text = "Browse";
+            this.AprioriBrowse.UseVisualStyleBackColor = true;
+            this.AprioriBrowse.Click += new System.EventHandler(this.AprioriBrowse_Click);
+            // 
+            // AprioriData
+            // 
+            this.AprioriData.FormattingEnabled = true;
+            this.AprioriData.ItemHeight = 25;
+            this.AprioriData.Location = new System.Drawing.Point(8, 52);
+            this.AprioriData.Name = "AprioriData";
+            this.AprioriData.Size = new System.Drawing.Size(321, 604);
+            this.AprioriData.TabIndex = 2;
+            // 
+            // AprioriCollection
+            // 
+            this.AprioriCollection.FormattingEnabled = true;
+            this.AprioriCollection.ItemHeight = 25;
+            this.AprioriCollection.Location = new System.Drawing.Point(335, 338);
+            this.AprioriCollection.Name = "AprioriCollection";
+            this.AprioriCollection.Size = new System.Drawing.Size(879, 254);
+            this.AprioriCollection.TabIndex = 3;
+            // 
+            // AprioriDataMining
+            // 
+            this.AprioriDataMining.Location = new System.Drawing.Point(336, 268);
+            this.AprioriDataMining.Name = "AprioriDataMining";
+            this.AprioriDataMining.Size = new System.Drawing.Size(166, 37);
+            this.AprioriDataMining.TabIndex = 4;
+            this.AprioriDataMining.Text = "Data Mining";
+            this.AprioriDataMining.UseVisualStyleBackColor = true;
+            this.AprioriDataMining.Click += new System.EventHandler(this.AprioriDataMining_Click);
+            // 
+            // AprioriCalculation
+            // 
+            this.AprioriCalculation.Location = new System.Drawing.Point(336, 599);
+            this.AprioriCalculation.Name = "AprioriCalculation";
+            this.AprioriCalculation.Size = new System.Drawing.Size(166, 45);
+            this.AprioriCalculation.TabIndex = 5;
+            this.AprioriCalculation.Text = "Calculate";
+            this.AprioriCalculation.UseVisualStyleBackColor = true;
+            this.AprioriCalculation.Click += new System.EventHandler(this.AprioriCalculation_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1240, 720);
-            this.Controls.Add(this.tabControl1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Controls.Add(this.TabControl);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -314,8 +402,9 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PhoneDataGrid)).EndInit();
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
+            this.TabControl.ResumeLayout(false);
+            this.PhonePage.ResumeLayout(false);
+            this.AprioriPage.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -340,9 +429,16 @@
         private System.Windows.Forms.ComboBox ScreenSizeComboBox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button AnalysisLength;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabControl TabControl;
+        private System.Windows.Forms.TabPage PhonePage;
+        private System.Windows.Forms.TabPage AprioriPage;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.ListBox AprioriMine;
+        private System.Windows.Forms.Button AprioriBrowse;
+        private System.Windows.Forms.ListBox AprioriData;
+        private System.Windows.Forms.Button AprioriDataMining;
+        private System.Windows.Forms.ListBox AprioriCollection;
+        private System.Windows.Forms.Button AprioriCalculation;
     }
 }
 
