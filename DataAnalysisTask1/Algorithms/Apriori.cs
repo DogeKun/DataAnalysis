@@ -14,7 +14,7 @@ namespace DataAnalysisTask1
             ItemSet I = db.GetUniqueItems();
             ItemSetCollection L = new ItemSetCollection(); //resultant large itemset
             ItemSetCollection Li = new ItemSetCollection(); //large itemset in each iteration
-            ItemSetCollection Ci = new ItemSetCollection(); //pruned itemset in each iteration
+            ItemSetCollection Ci = new ItemSetCollection(); //pruned itemset in each iterations
 
             //first iteration (1-item itemsets)
             foreach (string item in I)
